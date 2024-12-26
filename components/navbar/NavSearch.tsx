@@ -2,12 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 import { Input } from "../ui/input";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
 
 function NavSearch() {
   const searchParams = useSearchParams();
-  const pathname = usePathname();
   const { replace } = useRouter();
 
   const [search, setSearch] = useState(
@@ -21,7 +20,7 @@ function NavSearch() {
     } else {
       params.delete("search");
     }
-    replace(`${pathname}?${params.toString()}`);
+    replace(`/?${params.toString()}`);
   }, 500);
 
   useEffect(() => {
