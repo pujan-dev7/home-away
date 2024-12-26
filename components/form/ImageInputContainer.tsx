@@ -18,7 +18,7 @@ type ImageInputContainerProps = {
 };
 
 function ImageInputContainer(props: ImageInputContainerProps) {
-  const { image, name, action, text, children } = props;
+  const { image, name, action, text } = props;
   const [isUpdateFormVisible, setIsUpdateFormVisible] = useState(false);
 
   const userIcon = (

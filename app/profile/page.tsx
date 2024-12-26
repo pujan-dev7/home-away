@@ -16,8 +16,8 @@ async function ProfilePage() {
       <h1 className="text-2xl font-semibold mb-8 capitalize">user profile</h1>
       <div className="border p-8 rounded-md">
         <ImageInputContainer
-          image={profile.profileImage}
-          name={profile.username}
+          image={profile?.profileImage || ""}
+          name={profile?.username || ""}
           action={updateProfileImageAction}
           text="Update Profile Image"
         />
