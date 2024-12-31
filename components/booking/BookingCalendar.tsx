@@ -28,7 +28,7 @@ function BookingCalendar() {
 
   useEffect(() => {
     const selectedRange = generateDateRange(range);
-    const isDisableDateIncluded = selectedRange.some((date) => {
+    selectedRange.some((date) => {
       if (unavailableDates[date]) {
         setRange(defaultSelected);
         toast({ description: "Some dates are booked. Please select again" });
@@ -38,7 +38,7 @@ function BookingCalendar() {
     });
 
     useProperty.setState({ range });
-  }, [range]);
+  }, [range, toast, unavailableDates]);
 
   return (
     <Calendar
